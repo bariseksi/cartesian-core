@@ -193,7 +193,7 @@ points = plane.GetVerticalLine(0);
 DrawLines(CanvasObj, points, Colors.LightGray, 1);
 ```
 
-Now we can draw our data. Remember we need to use the ids given before to get them.<br>
+Now we can draw our data. Remember we need to use the ids given previously to get them.<br>
 Ids are useful for customizing any dataset.<br>
 ```c#
 points = plane.GetDataset(1);
