@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartesianBitmapDrawer", "CartesianBitmapDrawer\CartesianBitmapDrawer.csproj", "{6CCA1FA6-E0A9-4BAD-9579-9C74C6F52442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartesianCanvasDrawer", "CartesianCanvasDrawer\CartesianCanvasDrawer.csproj", "{BC2432BF-B8A8-4C18-B3B7-8D65DFBB559E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartesianCore", "CartesianCore\CartesianCore.csproj", "{EED782FE-4853-4526-BE96-90B44E711F56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CCA1FA6-E0A9-4BAD-9579-9C74C6F52442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CCA1FA6-E0A9-4BAD-9579-9C74C6F52442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CCA1FA6-E0A9-4BAD-9579-9C74C6F52442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CCA1FA6-E0A9-4BAD-9579-9C74C6F52442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2432BF-B8A8-4C18-B3B7-8D65DFBB559E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2432BF-B8A8-4C18-B3B7-8D65DFBB559E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2432BF-B8A8-4C18-B3B7-8D65DFBB559E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2432BF-B8A8-4C18-B3B7-8D65DFBB559E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED782FE-4853-4526-BE96-90B44E711F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED782FE-4853-4526-BE96-90B44E711F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED782FE-4853-4526-BE96-90B44E711F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED782FE-4853-4526-BE96-90B44E711F56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08CE638F-A34D-48B0-BB68-1A2EFB30C85B}
+	EndGlobalSection
+EndGlobal
