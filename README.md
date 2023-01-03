@@ -1,5 +1,8 @@
 # cartesian-core
 .net library that translates any x,y data to pixel coordinates 
+- **CartesianCore** the library itself.
+- **CartesianCanvasDrawer** an example project that draws graph on a canvas.
+- **CartesianBitmapDrawer** an example project that draws graph on a bitmap.
 <p align="left">
   <img src="images/plane.png" width="1000">
 </p>
@@ -17,6 +20,24 @@ initializes a new plane
 > **bottomMargin**: margin from bottom to the plane (pixel)<br>
 > **leftMargin**: margin from left to plane (pixel)<br>
 > **rightMargin**: margin from right to plane (pixel)<br>
+
+### CartesianCore.Plane.AddDataset
+adds dataset to a plane to be processed and sets plane's maximum & minimum values of each x,y axis.
+```c#
+public void AddDataset(Dataset dataset)
+```
+> **dataset**: an instance of a Dataset class
+
+### CartesianCore.Plane.SetAxes
+Sets plane's maximum & minimum values of each x,y axis and makes plane ignores calculated maximum & minimum values of each axis from added datasets<br>
+This can be called before ``` public void AddDataset(Dataset dataset)```
+```c#
+public void SetAxes(double xMin, double xMax, double yMin, double yMax)
+```
+> **xMin**: minimum value of X axis<br>
+> **xMax**: maximum value of X axis<br>
+> **yMin**: minimum value of Y axis<br>
+> **yMax**: maximum value of Y axis<br>
 
 ### CartesianCore.Dataset
 class constructor
