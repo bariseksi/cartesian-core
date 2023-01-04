@@ -101,21 +101,16 @@ namespace CartesianCanvasDrawer
 
             fontFace = new Typeface(new FontFamily("consolas"), FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
 
-
-
             int width = 1800;
             int height = 1000;
             CanvasObj.Background = new SolidColorBrush(Color.FromArgb(255, 30, 30, 30));
             CanvasObj.Height = height;
             CanvasObj.Width = width;
 
-            var plane = new Plane(width, height, 50,50,50,50);
-            //plane.SetAxes(-3, 30, -5, 10);
+            var plane = new Plane(width, height, 50, 50, 50, 50);
 
             Dataset dataset_A = new Dataset(1);
             Dataset dataset_B = new Dataset(2);
-
-            
 
             for (int i = 0; i < sample; i++)
             {
@@ -149,29 +144,17 @@ namespace CartesianCanvasDrawer
                 DrawString(CanvasObj, $"{i}", plane.GetPoint(0, i), 14, Colors.LightGray, new Typeface("consolas"));
             }
 
-            //points = plane.GetVerticalLine(plane.XAxisMax);
-            //DrawLines(CanvasObj, points, color, 1);
-
-            //points = plane.GetVerticalLine(plane.XAxisMin);
-            //DrawLines(CanvasObj, points, color, 1);
-
-            //points = plane.GetHorizontalLine(plane.YAxisMax);
-            //DrawLines(CanvasObj, points, color, 1);
-
-            //points = plane.GetHorizontalLine(plane.YAxisMin);
-            //DrawLines(CanvasObj, points, color, 1);
-
             points = plane.GetHorizontalLine(0);
-            DrawLines(CanvasObj, points, Colors.LightGray, 1);
+            DrawLines(CanvasObj, points, Colors.White, 1);
 
             points = plane.GetVerticalLine(0);
-            DrawLines(CanvasObj, points, Colors.LightGray, 1);
+            DrawLines(CanvasObj, points, Colors.White, 1);
 
             points = plane.GetDataset(1);
-            DrawPoints(CanvasObj, points, Colors.Blue, 3);
+            DrawLines(CanvasObj, points, Colors.Blue, 3);
 
             points = plane.GetDataset(2);
-            DrawPoints(CanvasObj, points, Colors.Green, 3);
+            DrawLines(CanvasObj, points, Colors.Green, 3);
         }
 
         public int DrawLines(Canvas canvas, CartesianCore.Point[] points, Color color, float thickness)

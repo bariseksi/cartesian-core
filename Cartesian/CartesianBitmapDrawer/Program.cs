@@ -46,7 +46,6 @@ namespace CartesianBitmapDrawer
 
 
             var plane = new Plane(width, height, 50, 50, 50, 50);
-            //plane.SetAxes(-3, 30, -5, 10);
 
             Dataset dataset_A = new Dataset(1);
             Dataset dataset_B = new Dataset(2);
@@ -71,7 +70,7 @@ namespace CartesianBitmapDrawer
             for (int i = (int)plane.XAxisMin; i <= plane.XAxisMax; i++)
             {
                 points = plane.GetVerticalLine(i);
-                DrawLine(g, points, color, 1);
+                DrawLines(g, points, color, 1);
                 //lets write the value
                 DrawString(g, $"{i}", plane.GetPoint(i, 0), Color.LightGray, new Font("consolas", 14));
             }
@@ -79,28 +78,16 @@ namespace CartesianBitmapDrawer
             for (int i = (int)plane.YAxisMin; i <= plane.YAxisMax; i++)
             {
                 points = plane.GetHorizontalLine(i);
-                DrawLine(g, points, color, 1);
+                DrawLines(g, points, color, 1);
                 //lets write the value
                 DrawString(g, $"{i}", plane.GetPoint(0, i), Color.LightGray, new Font("consolas", 14));
             }
 
-            //points = plane.GetVerticalLine(plane.XAxisMax);
-            //DrawLine(g, points, color, 1);
-
-            //points = plane.GetVerticalLine(plane.XAxisMin);
-            //DrawLine(g, points, color, 1);
-
-            //points = plane.GetHorizontalLine(plane.YAxisMax);
-            //DrawLine(g, points, color, 1);
-
-            //points = plane.GetHorizontalLine(plane.YAxisMin);
-            //DrawLine(g, points, color, 1);
-
             points = plane.GetHorizontalLine(0);
-            DrawLine(g, points, Color.LightGray, 1);
+            DrawLines(g, points, Color.White, 1);
 
             points = plane.GetVerticalLine(0);
-            DrawLine(g, points, Color.LightGray, 1);
+            DrawLines(g, points, Color.White, 1);
 
             points = plane.GetDataset(1);
             DrawPoints(g, points, Color.Blue, 3);
@@ -112,7 +99,7 @@ namespace CartesianBitmapDrawer
 
         }
 
-        static void DrawLine(Graphics g, CartesianCore.Point[] points, Color color, float tickness)
+        static void DrawLines(Graphics g, CartesianCore.Point[] points, Color color, float tickness)
         {
             for (int i = 0; i < points.Length - 1; i++)
             {

@@ -98,26 +98,26 @@ public void Add(double xValue, double yValue)
 In order to make use of CartesianCore library you need to add compiled CartesianCore.dll file to your project as a reference.
 First lets generate some data to draw for the sake of example.
 ```c#
-            var r = new Random();
-            int resolution = 1;
-            int sample = 1200 / resolution;
-            int timeStart = -600 / resolution;
-            float coef = 0.005f * resolution;
-            timeData = new float[sample];
-            sinData = new float[sample];
-            someData = new float[sample];
+var r = new Random();
+int resolution = 1;
+int sample = 1200 / resolution;
+int timeStart = -600 / resolution;
+float coef = 0.005f * resolution;
+timeData = new float[sample];
+sinData = new float[sample];
+someData = new float[sample];
 
-            for (int i = 0; i < sample; i++)
-            {
-                timeData[i] = (i + timeStart) * coef;
-            }
+for (int i = 0; i < sample; i++)
+{
+	timeData[i] = (i + timeStart) * coef;
+}
 
-            for (int i = 0; i < sample; i++)
-            {
-                var t = (i + timeStart) * coef;
-                sinData[i] = (float)Math.Cos(4*t);
-                someData[i] = t * (float)Math.Sin(Math.Pow(t, 2));
-            }
+for (int i = 0; i < sample; i++)
+{
+	var t = (i + timeStart) * coef;
+    sinData[i] = (float)Math.Cos(4*t);
+    someData[i] = t * (float)Math.Sin(Math.Pow(t, 2));
+}
 ```
 Now we have some data to show in cartesian plane.<br>
 lets create a plane first
@@ -134,8 +134,8 @@ timeData array is representing the X axis for both dataset
 ```c#
 for (int i = 0; i < sample; i++)
 {
-  dataset_A.Add(timeData[i], someData[i]);
-  dataset_B.Add(timeData[i], sinData[i]);
+	dataset_A.Add(timeData[i], someData[i]);
+	dataset_B.Add(timeData[i], sinData[i]);
 }
 ```
 now we need to put these datasets to the plane instance.
@@ -157,14 +157,14 @@ plane.SetAxes(-4, 4, -5, 5);
 For drawing strings to canvas we need to define a class derived from **FrameworkElement** <br>
 we will use this class to draw numbers to cartesian plane<br>
 Now lets start to draw plane
-Since we set our maximum and minimum values to an integer above we can draw the vertical grids<br>
+since we set our maximum and minimum values to an integer above we can draw the vertical grids<br>
 this is optional you don't need to draw them<br>
 ```c#
 for (int i = (int)plane.XAxisMin; i <= plane.XAxisMax; i++)
 {
-  points = plane.GetVerticalLine(i);
-  DrawLines(CanvasObj, points, color, 1);
-  DrawString(CanvasObj, $"{i}", plane.GetPoint(i, 0), 14, Colors.LightGray, new Typeface("consolas"));
+	points = plane.GetVerticalLine(i);
+	DrawLines(CanvasObj, points, color, 1);
+	DrawString(CanvasObj, $"{i}", plane.GetPoint(i, 0), 14, Colors.LightGray, new Typeface("consolas"));
 }
 ```
 > DrawLines and DrawString functions are defined only for WPF canvas element.<br>
@@ -174,27 +174,27 @@ We can do the same for the horizontal grids
 ```c#
 for (int i = (int)plane.YAxisMin; i <= plane.YAxisMax; i++)
 {
-  points = plane.GetHorizontalLine(i);
-  DrawLines(CanvasObj, points, color, 1);
-  DrawString(CanvasObj, $"{i}", plane.GetPoint(0, i), 14, Colors.LightGray, new Typeface("consolas"));
+	points = plane.GetHorizontalLine(i);
+	DrawLines(CanvasObj, points, color, 1);
+	DrawString(CanvasObj, $"{i}", plane.GetPoint(0, i), 14, Colors.LightGray, new Typeface("consolas"));
 }
 ```
 Draw the axes. First X axis
 ```c#
 points = plane.GetHorizontalLine(0);
-DrawLines(CanvasObj, points, Colors.LightGray, 1);
+DrawLines(CanvasObj, points, Colors.White, 1);
 ```
-> I prefer lighter color to highlight to axes since I choose the dark backround.<br>
-> I used the same color as the girds since drawing twice makes them little bit more highlighted.<br>
+> I prefer lighter color to highlight the axes since I choose the dark backround.<br>
 
 Then Y axis
 ```c#
 points = plane.GetVerticalLine(0);
-DrawLines(CanvasObj, points, Colors.LightGray, 1);
+DrawLines(CanvasObj, points, Colors.White, 1);
 ```
 
 Now we can draw our data. Remember we need to use the ids given previously to get them.<br>
 Ids are useful for customizing any dataset.<br>
+> I know sine wave dataset id is 2 so I want them to display green
 ```c#
 points = plane.GetDataset(1);
 DrawPoints(CanvasObj, points, Colors.Blue, 3);
