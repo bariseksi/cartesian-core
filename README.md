@@ -83,7 +83,7 @@ public Dataset(int datasetID)
 ```
 initializes a new dataset<br>
 represents a set of data in (x,y) pairs
->**datasetID**: id of the dataset to be used while getting translated coordinates from instance of a plane class.<br>
+>**datasetID**: id of the dataset to be passed as an argument to Plane.GetDataset(int datasetID) function<br>
 
 ### CartesianCore.Dataset.Add
 Adds data (x,y) pair to the dataset
